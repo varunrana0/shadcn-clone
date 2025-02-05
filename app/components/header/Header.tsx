@@ -1,9 +1,6 @@
-import { Button } from "@/components/ui/button";
 import GitHubIcon from "@/lib/Icons/GitHubIcon";
 import ThemeSwitcher from "@/lib/Icons/ThemeSwitcher";
-import React from "react";
-
-type Props = {};
+import Link from "next/link";
 
 const links = [
   { name: "Docs", href: "#" },
@@ -14,7 +11,7 @@ const links = [
   { name: "Colors", href: "#" },
 ];
 
-function Header({}: Props) {
+function Header() {
   return (
     <div
       data-wrapper
@@ -23,7 +20,7 @@ function Header({}: Props) {
       <div className="container-wrapper mx-auto w-full">
         <div className="h-14 px-4  flex items-center">
           <div className="mr-4 hidden md:flex">
-            <a href="/" className="mr-4 flex items-center gap-2 lg:mr-6">
+            <Link href="/" className="mr-4 flex items-center gap-2 lg:mr-6">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 256 256"
@@ -56,16 +53,16 @@ function Header({}: Props) {
               <span className="hidden font-bold lg:inline-block">
                 shadcn/ui
               </span>
-            </a>
+            </Link>
             <nav className="flex items-center gap-4 text-sm xl:gap-6">
               {links.map((link) => (
-                <a
+                <Link
                   key={link.name}
                   href={link.href}
                   className="transition-colors hover:text-foreground/80 text-foreground/80"
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
@@ -107,10 +104,10 @@ function Header({}: Props) {
             </div>
             <nav className="flex items-center gap-0.5">
               <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 w-8 px-0">
-                <a target="_blank" rel="noreferrer" href="#">
+                <Link target="_blank" rel="noreferrer" href="#">
                   <GitHubIcon />
                   <span className="sr-only">GitHub</span>
-                </a>
+                </Link>
               </button>
               <button className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground py-2 group/toggle h-8 w-8 px-0">
                 <ThemeSwitcher />

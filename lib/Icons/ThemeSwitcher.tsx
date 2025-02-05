@@ -1,8 +1,4 @@
-import React from "react";
-
-type Props = {};
-
-function ThemeSwitcher({}: Props) {
+function ThemeSwitcher() {
   return (
     <>
       <svg

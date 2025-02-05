@@ -2,6 +2,7 @@ import Header from "./components/header/Header";
 import Hero from "./components/header/Hero";
 import Footer from "./components/header/Footer";
 import ComponentsNavigation from "./components/header/ComponentsNavigation";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
         <div className=" container-wrapper ">
           <div className="container py-6">
             <section className="overflow-hidden rounded-lg border bg-background shadow-md md:hidden md:shadow-xl">
-              <img
+              <Image
                 alt="Cards"
                 loading="lazy"
                 width="1280"
@@ -21,7 +22,6 @@ export default function Home() {
                 decoding="async"
                 data-nimg="1"
                 className="block dark:hidden"
-                srcSet="/_next/image?url=%2Fexamples%2Fcards-dark.png&w=1920&q=75 1x, /_next/image?url=%2Fexamples%2Fcards-dark.png&w=3840&q=75 2x"
                 src="https://ui.shadcn.com/_next/image?url=%2Fexamples%2Fcards-dark.png&w=1920&q=75"
                 style={{ color: "transparent" }}
               />

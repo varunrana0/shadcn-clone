@@ -1,6 +1,4 @@
-import React from "react";
-
-type Props = {};
+import Link from "next/link";
 
 const links = [
   { name: "Examples", href: "#", active: true },
@@ -13,7 +11,7 @@ const links = [
   { name: "Authentication", href: "#", active: false },
 ];
 
-function ComponentsNavigation({}: Props) {
+function ComponentsNavigation() {
   return (
     <div className="border-b">
       <div className="container-wrapper">
@@ -41,14 +39,14 @@ function ComponentsNavigation({}: Props) {
                 <div style={{ minWidth: "100%", display: "table" }}>
                   <div className="flex items-center [&amp;>a:first-child]:text-primary">
                     {links.map((link, index) => (
-                      <a
+                      <Link
                         key={index}
                         className="flex h-7 items-center justify-center rounded-full px-4 text-center text-sm font-medium text-muted-foreground transition-colors hover:text-primary data-[active=true]:bg-muted data-[active=true]:text-primary"
                         data-active={link.active}
                         href={link.href}
                       >
                         {link.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
